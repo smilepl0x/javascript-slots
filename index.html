@@ -1,21 +1,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
             <h1 id="title">JavaScript Slots, lol</h1>
         </div>
-        <div class="container">
+        <div id="player_info" class="container">
             <h3 id="money"></h3>
             <h3 id="bet"></h3>
             <h3 id="lines"></h3>
         </div>
-        <div class="container">
-            <div id="machine_table">
-                <div class="table_row">
-                    <div id="win_or_lose"></div>
-                </div>
+        <div id="machine" class="container">
+            <div class="table_row">
+                <div id="win_or_lose">Please Pull the Lever</div>
+            </div>
+            <div id="machine_left">
                 <div class="table_row">
                     <div class="reel">
                         <div id="first_element" class="cell"></div>
@@ -37,27 +38,25 @@
                         <div id="ninth_element" class="cell"></div>
                     </div>
                 </div>
-                <div class="table_row">
-                    <div class="bar">
-                        <div id="bet_amt_title" class="bar_title">Change Bet:</div>
-                        <div id="bet_amt_5" class="bet_amt">5</div>
-                        <div id="bet_amt_10" class="bet_amt">10</div>
-                        <div id="bet_amt_15" class="bet_amt">15</div>
-                        <div id="bet_amt_20" class="bet_amt">20</div>
-                        <div id="bet_amt_25" class="bet_amt">25</div>
-                    </div>
+            </div>
+            <div id="machine_right">
+                <div class="bar">
+                    <div id="bet_amt_title" class="bar_title">Change Bet:</div>
+                    <div id="bet_amt_5" class="bet_amt">5</div>
+                    <div id="bet_amt_10" class="bet_amt">10</div>
+                    <div id="bet_amt_15" class="bet_amt">15</div>
+                    <div id="bet_amt_20" class="bet_amt">20</div>
+                    <div id="bet_amt_25" class="bet_amt">25</div>
                 </div>
-                <div class="table_row">
-                    <div class="bar">
-                        <div id="lines_title" class="bar_title">Lines:</div>
-                        <div id="line_amt_1" class="line_amt">1</div>
-                        <div id="line_amt_3" class="line_amt">3</div>
-                        <div id="line_amt_6" class="line_amt">6</div>
-                        <div id="line_amt_8" class="line_amt">8</div>
-                    </div>
+                <div class="bar">
+                    <div id="lines_title" class="bar_title">Lines:</div>
+                    <div id="line_amt_1" class="line_amt">1</div>
+                    <div id="line_amt_3" class="line_amt">3</div>
+                    <div id="line_amt_6" class="line_amt">6</div>
+                    <div id="line_amt_8" class="line_amt">8</div>
                 </div>
-                <div class="table_row">
-                    <button id="spin">Pull the Lever, Kronk</button>
+                <div class="bar">
+                    <div id="spin">Pull the Lever, Kronk!</div>
                 </div>
             </div>
         </div>

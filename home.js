@@ -86,7 +86,7 @@ let betButtons = document.getElementsByClassName("bet_amt");
 
 for (let i = 0; i < betButtons.length; i++) {
     betButtons[i].addEventListener("click", function(){
-        setBet(betButtons[i].innerHTML);
+        setBet(Number.parseFloat(betButtons[i].innerHTML));
     })
 }
 
@@ -94,7 +94,7 @@ let lineButtons = document.getElementsByClassName("line_amt");
 
 for (let i = 0; i < lineButtons.length; i++) {
     lineButtons[i].addEventListener("click", function(){
-        setLines(lineButtons[i].innerHTML);
+        setLines(Number.parseFloat(lineButtons[i].innerHTML));
     })
 }
 

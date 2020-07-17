@@ -1,13 +1,65 @@
 body {
-    background-color: #50514F;
+    background-color: #06070E;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
 }
 
 .container {
     width: 100%;
+    overflow: auto;
+    border-style: solid;
+    border-color: #4F86C6;
 }
 
 #title {
+    background-color: #c03221;
+    height: 7vw;
+    display: block;
+    margin: 0;
     text-align: center;
+    line-height: 7vw;
+}
+
+#player_info {
+    text-align: center;
+    background-color: #29524A;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+#money {
+    width: 30%;
+    display: inline-block;
+}
+
+#bet {
+    width: 30%;
+    display: inline-block;
+}
+
+#lines {
+    width: 30%;
+    display: inline-block;
+}
+
+#win_or_lose {
+    text-align: center;
+}
+
+#machine {
+    background-color: #29524A;
+}
+
+#machine_left {
+    width: 50%;
+    float: left;
+    padding-bottom: 20px;
+}
+
+#machine_right {
+    width: 50%;
+    float: right;
+    padding-bottom: 20px;
 }
 
 .reel {
@@ -15,24 +67,27 @@ body {
 }
 
 .cell {
-    background-color: #247BA0;
+    background-color: #4F86C6;
+    border-style: solid;
+    border-color: black;
     width: 10vw;
     height: 10vw;
     margin: 10px 10px 0px 0px;
     display: inline-block;
     text-align: center;
     line-height: 10vw;
-    color: #FCDC4D;
     font-size: 5vw;
 }
 
 .bar {
-    background-color: #C1839F;
+    background-color: #29524A;
     padding: 5px;
+    text-align: center;
 }
 
 .bet_amt{
-    background-color: #FCDC4D;
+    background-color: #94A187;
+    border-style: solid;
     width: 8vw;
     height: 4vw;
     margin: 10px;
@@ -41,12 +96,36 @@ body {
     line-height: 4vw;
 }
 
+.bet_amt:hover {
+    background-color: #3D4536;
+}
+
 .line_amt{
-    background-color: #FCDC4D;
+    background-color: #94A187;
+    border-style: solid;
     width: 8vw;
     height: 4vw;
     margin: 10px;
     display: inline-block;
     text-align: center;
     line-height: 4vw;
+}
+
+.line_amt:hover {
+    background-color: #3D4536;
+}
+
+#spin {
+    background-color: #c03221;
+    border-style: solid;
+    width: 75%;
+    height: 4vw;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 4vw;
+}
+
+#spin:hover {
+    background-color: firebrick;
 }
