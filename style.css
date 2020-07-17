@@ -1,0 +1,52 @@
+body {
+    background-color: #50514F;
+}
+
+.container {
+    width: 100%;
+}
+
+#title {
+    text-align: center;
+}
+
+.reel {
+    text-align: center;
+}
+
+.cell {
+    background-color: #247BA0;
+    width: 10vw;
+    height: 10vw;
+    margin: 10px 10px 0px 0px;
+    display: inline-block;
+    text-align: center;
+    line-height: 10vw;
+    color: #FCDC4D;
+    font-size: 5vw;
+}
+
+.bar {
+    background-color: #C1839F;
+    padding: 5px;
+}
+
+.bet_amt{
+    background-color: #FCDC4D;
+    width: 8vw;
+    height: 4vw;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 4vw;
+}
+
+.line_amt{
+    background-color: #FCDC4D;
+    width: 8vw;
+    height: 4vw;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 4vw;
+}
