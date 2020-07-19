@@ -86,7 +86,7 @@ body {
     text-align: center;
 }
 
-.bet_amt{
+.bet_amt {
     background-color: #94A187;
     border: 2px solid black;
     width: 8vw;
@@ -104,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-.line_amt{
+.line_amt {
     background-color: #94A187;
     border: 2px solid black;
     width: 8vw;
@@ -141,14 +141,23 @@ body {
 }
 
 .shake {
-    animation: shake .1s 5 alternate-reverse;
+    animation: shake 0.5s 1 ease-out;
 }
 
 @keyframes shake {
-    from {
+    0% {
         transform: rotate(-5deg);
     }
-    to {
-        transform: rotate(5deg);
+    25% {
+        transform: rotate(4deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    75% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }

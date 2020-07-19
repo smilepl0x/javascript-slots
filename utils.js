@@ -26,7 +26,7 @@ function animate() {
     }
 }
 
-function spin(){
+function spin() {
     animate();
 
     // Reel 1
