@@ -7,7 +7,8 @@
     --reel-color: #61534A;
     --button-color: #8B532F;
     --button-hover-color: #0D0805;
-    --spin-hover-color: #8B532F
+    --spin-hover-color: #8B532F;
+    --indicator-color: red;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
 #player_info {
     text-align: center;
     border-style: solid;
-    border-color: var(--main-bg-color);
+    border-color: var(--secondary-bg-color);
     background-image: linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
 }
 
@@ -61,9 +62,9 @@ body {
 }
 
 #machine {
-    background-image: linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
+    background-image: linear-gradient(var(--main-bg-color), var(--secondary-bg-color));
     border-style: solid;
-    border-color: var(--main-bg-color);
+    border-color: var(--secondary-bg-color);
 }
 
 #machine_left {
@@ -152,6 +153,7 @@ body {
     line-height: inherit;
     font-size: inherit;
     font-family: inherit;
+    font-weight: bold;
     color: inherit;
 }
 
