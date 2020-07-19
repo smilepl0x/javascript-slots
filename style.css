@@ -96,6 +96,7 @@ body {
     display: inline-block;
     text-align: center;
     font-size: 2vw;
+    font-weight: bolder;
     overflow: auto;
 }
 
@@ -153,7 +154,7 @@ body {
     line-height: inherit;
     font-size: inherit;
     font-family: inherit;
-    font-weight: bold;
+    font-weight: bolder;
     color: inherit;
 }
 
