@@ -1,5 +1,11 @@
 'use strict';
 
+// Gets a random number 0 - 8
+function selectRandom() {
+    let i = Math.floor(Math.random() * 8)
+    return i;
+}
+
 // Sets the monies
 function setMoney(newMoney) {
     app.money = newMoney;
@@ -30,7 +36,6 @@ function generateReels() {
     reel[8] = reel[0];
     reel[9] = reel[1];
 
-    console.log(reel);
     return reel;
 }
 
@@ -81,7 +86,3 @@ function spin() {
         cells[i].innerHTML = app.results[i];
     }
 }
-
-setMoney(1000);
-setBet(5);
-setLines(1);
