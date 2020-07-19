@@ -1,32 +1,43 @@
+:root {
+    --text-color: #E8C9B5;
+    --main-bg-color: #000000;
+    --secondary-bg-color: #191716;
+    --main-color: #DD6E42;
+    --container-color: #C0D6DF;
+    --reel-color: #61534A;
+    --button-color: #8B532F;
+    --button-hover-color: #0D0805;
+    --spin-hover-color: #8B532F
+}
+
 body {
-    background-color: #0c1022;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
+    background-image: linear-gradient(var(--main-bg-color) 1%, var(--secondary-bg-color));
+    font-family: "Exo 2", sans-serif;
+    color: var(--text-color);
+    font-size: 15px;
 }
 
 .container {
     width: 80%;
     overflow: auto;
-    border-style: double;
-    border-color: #0c1022;
-    border-radius: 15px;
-    background-color: #C9CBD6;
+    border-radius: 5px;
     margin: auto;
 }
 
 #title {
-    background-color: #28528A;
+    color: var(--main-color);
     height: 7vw;
     display: block;
     margin: 0;
-    text-align: center;
+    text-align: left;
     line-height: 7vw;
 }
 
 #player_info {
     text-align: center;
-    border-top: 0px;
-    border-bottom: 0px;
+    border-style: solid;
+    border-color: var(--main-bg-color);
+    background-image: linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
 }
 
 #money {
@@ -49,6 +60,12 @@ body {
     text-align: center;
 }
 
+#machine {
+    background-image: linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
+    border-style: solid;
+    border-color: var(--main-bg-color);
+}
+
 #machine_left {
     width: 50%;
     padding: 20px 0 20px 0;
@@ -63,11 +80,11 @@ body {
 }
 
 .reel {
-    background-color: #4F86C6;
+    background-color: var(--reel-color);
     width: 8.5vw;
     display: inline-block;
     margin: 5px;
-    box-shadow: 10px 10px 5px #28528A;
+    box-shadow: 10px 10px 5px var(--main-color);
 }
 
 .cell {
@@ -87,7 +104,7 @@ body {
 }
 
 .bet_amt {
-    background-color: #94A187;
+    background-color: var(--button-color);
     border: 2px solid black;
     width: 8vw;
     height: 4vw;
@@ -97,15 +114,16 @@ body {
     line-height: inherit;
     font-size: inherit;
     font-family: inherit;
+    color: inherit;
 }
 
 .bet_amt:hover {
-    background-color: #3D4536;
+    background-color: var(--button-hover-color);
     cursor: pointer;
 }
 
 .line_amt {
-    background-color: #94A187;
+    background-color: var(--button-color);
     border: 2px solid black;
     width: 8vw;
     height: 4vw;
@@ -115,15 +133,16 @@ body {
     line-height: inherit;
     font-size: inherit;
     font-family: inherit;
+    color: inherit;
 }
 
 .line_amt:hover {
-    background-color: #3D4536;
+    background-color: var(--button-hover-color);
     cursor: pointer;
 }
 
 #spin {
-    background-color: #28528A;
+    background-color: var(--main-color);
     border: 2px solid black;
     width: 75%;
     height: 4vw;
@@ -133,10 +152,11 @@ body {
     line-height: inherit;
     font-size: inherit;
     font-family: inherit;
+    color: inherit;
 }
 
 #spin:hover {
-    background-color: #1D2033;
+    background-color: var(--spin-hover-color);
     cursor: pointer;
 }
 
