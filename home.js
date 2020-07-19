@@ -1,16 +1,19 @@
 'use strict';
 
 let app = {
-    reel: ["Fruit", "BAR", "J", "Q", "K", "A", "7", "777", "Fruit", "BAR"], // Repeated elements at the end to emulate reel
+    elements: ["Fruit", "BAR", "J", "Q", "K", "A", "7", "777"],
+    reel1: Array(10), // Each reel has 8 indexes + first 2 repeated to simulate reel
+    reel2: Array(10),
+    reel3: Array(10),
     results: ["7", "7", "7", "777", "777", "777", "7", "7", "7"],
-    payFactors: [3, 10, 12, 15, 25, 50, 100, 250],
+    payFactors: [3, 10, 12, 15, 25, 50, 100, 250], // The order of these is important
     money: 0,
     bet: 0,
     lines: 0,
     pos: null
 }
 
-function selectStartPos() {
+function selectRandom() {
     let i = Math.floor(Math.random() * 8)
     return i;
 }
@@ -35,7 +38,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[1])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[1])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
             }
@@ -47,7 +50,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[0])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[0])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
             }
@@ -55,7 +58,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[1])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[1])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
             }
@@ -63,7 +66,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[2])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[2])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
             }
@@ -75,7 +78,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[0])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[0])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
                 console.log("Pay factor: " + payFactor)
@@ -85,7 +88,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[1])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[1])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
                 console.log("Pay factor: " + payFactor)
@@ -95,7 +98,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[2])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[2])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
                 console.log("Pay factor: " + payFactor)
@@ -105,7 +108,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[0])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[0])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
                 console.log("Pay factor: " + payFactor)
@@ -115,7 +118,7 @@ function checkWin(lines) {
                 /* Find the index of the result in the app.reels array and use that index
                  *  to find the matching element in the app.payFactors array
                  */
-                payFactor = app.payFactors[app.reel.indexOf(app.results[2])];
+                payFactor = app.payFactors[app.elements.indexOf(app.results[2])];
                 totalWin += (app.bet * payFactor);
                 document.getElementById("win_or_lose").innerHTML = "WINNER!";
                 console.log("Pay factor: " + payFactor)
