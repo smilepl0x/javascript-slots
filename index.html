@@ -18,42 +18,45 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 id="title">javascript slots</h1>
+                <h1 class="text-left m-0" id="title">javascript slots</h1>
                 <p>It's almost fun!</p>
+            </div>
+            <div class="col">
+                <h3 class="text-right" id="money"></h3>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class= "text-center" id="win_or_lose">Please Pull the Lever</div>
+                <div class= "h5 text-center" id="win_or_lose">Please Pull the Lever</div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 my-auto">
+            <div class="col-md-6 my-auto">
                 <div class="d-flex justify-content-center">
-                    <div class="d-inline-flex flex-column reel">
+                    <div class="d-inline-flex flex-column m-1 reel">
                         <div id="first_element" class="cell">7</div>
                         <div id="fourth_element" class="cell">7</div>
                         <div id="seventh_element" class="cell">7</div>
                     </div>
-                    <div class="d-inline-flex flex-column reel">
+                    <div class="d-inline-flex flex-column m-1 reel">
                         <div id="second_element" class="cell">777</div>
                         <div id="fifth_element" class="cell">777</div>
                         <div id="eighth_element" class="cell">777</div>
                     </div>
-                    <div class="d-inline-flex flex-column reel">
+                    <div class="d-inline-flex flex-column m-1 reel">
                         <div id="third_element" class="cell">7</div>
                         <div id="sixth_element" class="cell">7</div>
                         <div id="ninth_element" class="cell">7</div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 my-auto">
+            <div class="col-md-6 my-auto">
                 <div class="d-flex  justify-content-center">
                     <div class="d-flex flex-column">
                         <span>Change Bet:</span>
                         <div class="btn-group">
                             <button type="button" class="btn dropdown-toggle group" id="bet_selection" data-toggle="dropdown">5</button>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu dropdown-menu-right">
                                 <span class="dropdown-item bet-select">5</span>
                                 <span class="dropdown-item bet-select">10</span>
                                 <span class="dropdown-item bet-select">15</span>
@@ -64,10 +67,10 @@
                         <span>Change Lines:</span>
                         <div class="btn-group">
                             <button type="button" class="btn dropdown-toggle group" id="line_selection" data-toggle="dropdown">1</button>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu dropdown-menu-right">
                                 <span class="dropdown-item line-select">1</span>
                                 <span class="dropdown-item line-select">3</span>
-                                <span class="dropdown-item line-select">6</span>
+                                <span class="dropdown-item line-select">5</span>
                                 <span class="dropdown-item line-select">8</span>
                             </div>
                         </div>
@@ -78,7 +81,16 @@
         <div class="row">
             <div class="col">
                 <div class="d-flex justify-content-center">
-                    <button class="btn" id="spin">Pull the Lever, Kronk!</button>
+                    <div class="alert alert-danger p-1 m-0 mt-3 w-50 text-center d-none" id="money_alert">
+                        <strong>You don't have enough money for that!</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button class="btn m-3 w-75" id="spin">Pull the Lever, Kronk!</button>
                 </div>
             </div>
         </div>

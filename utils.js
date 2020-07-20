@@ -9,6 +9,7 @@ function selectRandom() {
 // Sets the monies
 function setMoney(newMoney) {
     app.money = newMoney;
+    document.getElementById("money").innerHTML = `Your money: $${app.money}`;
 }
 
 // Sets the betties
@@ -102,24 +103,39 @@ function checkWin(lines) {
     let totalWin = 0;
 
     switch (lines) {
-        case 1:
+        case 1: {
             totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
             break;
-        case 3:
+        }
+        case 3: {
             totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
             totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
             totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
             break;
-        case 5:
+        }
+        case 5: {
             totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
             totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
             totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
             totalWin += checkRow(app.results[0], app.results[4], app.results[8]);
             totalWin += checkRow(app.results[2], app.results[4], app.results[6]);
             break;
-        default:
+        }
+        case 8: {
+            totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
+            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
+            totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
+            totalWin += checkRow(app.results[0], app.results[4], app.results[8]);
+            totalWin += checkRow(app.results[2], app.results[4], app.results[6]);
+            totalWin += checkRow(app.results[0], app.results[1], app.results[2]);
+            totalWin += checkRow(app.results[3], app.results[4], app.results[5]);
+            totalWin += checkRow(app.results[6], app.results[7], app.results[8]);
+            break;
+        }
+        default: {
             totalWin = 0;
             break;
+        }
     }
 
     if (totalWin > 0) {
@@ -129,4 +145,5 @@ function checkWin(lines) {
     else {
         document.getElementById("win_or_lose").innerHTML = `LOSE. Please play again.`
     }
+
 }

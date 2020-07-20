@@ -5,7 +5,7 @@ let app = {
     reel1: Array(10), // Each reel has 8 indexes + first 2 repeated to simulate reel
     reel2: Array(10),
     reel3: Array(10),
-    results: ["7", "7", "7", "777", "777", "777", "7", "7", "7"],
+    results: Array(8),
     payFactors: [3, 10, 12, 15, 25, 50, 100, 250], // The order of these is important
     money: 0,
     bet: 0,
@@ -22,7 +22,6 @@ let betSelections = document.getElementsByClassName("bet-select");
 
 for (let i = 0; i < betSelections.length; i++) {
     betSelections[i].addEventListener("click", function() {
-        console.log("clicked");
         document.getElementById("bet_selection").innerHTML = betSelections[i].innerHTML;
         setBet(Number.parseFloat(betSelections[i].innerHTML));
     })
@@ -41,8 +40,13 @@ for (let i = 0; i < lineSelections.length; i++) {
 // Pull the lever, Kronk
 document.getElementById("spin").addEventListener("click", function() {
 
-    // check if money is available and take it
+    // check if money is available
     if ((app.bet * app.lines) <= app.money) {
+
+        // Remove the alert div if displayed
+        document.getElementById("money_alert").classList.add("d-none");
+
+        // Take-a ze money
         setMoney(app.money - (app.bet * app.lines));
 
         // Reel elements (spin!)
@@ -52,7 +56,7 @@ document.getElementById("spin").addEventListener("click", function() {
         checkWin(app.lines);
 
     } else {
-        alert("You don't have enough money for that!");
+        document.getElementById("money_alert").classList.remove("d-none");
     }
 
 
