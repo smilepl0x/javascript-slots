@@ -1,58 +1,85 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>&#9752&#9752&#9752</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1 id="title">javascript slots, lol</h1>
-    </div>
-    <div id="player_info" class="container">
-        <h3 id="money"></h3>
-        <h3 id="bet"></h3>
-        <h3 id="lines"></h3>
-    </div>
-    <div id="machine" class="container">
-        <div class="table_row">
-            <div id="win_or_lose">Please Pull the Lever</div>
-        </div>
-        <div id="machine_left">
-            <div class="reel">
-                <div id="first_element" class="cell">7</div>
-                <div id="fourth_element" class="cell">7</div>
-                <div id="seventh_element" class="cell">7</div>
-            </div>
-            <div class="reel">
-                <div id="second_element" class="cell">777</div>
-                <div id="fifth_element" class="cell">777</div>
-                <div id="eighth_element" class="cell">777</div>
-            </div>
-            <div class="reel">
-                <div id="third_element" class="cell">7</div>
-                <div id="sixth_element" class="cell">7</div>
-                <div id="ninth_element" class="cell">7</div>
+        <div class="row">
+            <div class="col">
+                <h1 id="title">javascript slots</h1>
+                <p>It's almost fun!</p>
             </div>
         </div>
-        <div id="machine_right">
-            <div class="bar">
-                <div id="bet_amt_title" class="bar_title">Change Bet:</div>
-                <button id="bet_amt_5" class="bet_amt">5</button>
-                <button id="bet_amt_10" class="bet_amt">10</button>
-                <button id="bet_amt_15" class="bet_amt">15</button>
-                <button id="bet_amt_20" class="bet_amt">20</button>
-                <button id="bet_amt_25" class="bet_amt">25</button>
+        <div class="row">
+            <div class="col">
+                <div class= "text-center" id="win_or_lose">Please Pull the Lever</div>
             </div>
-            <div class="bar">
-                <div id="lines_title" class="bar_title">Lines:</div>
-                <button id="line_amt_1" class="line_amt">1</button>
-                <button id="line_amt_3" class="line_amt">3</button>
-                <button id="line_amt_5" class="line_amt">5</button>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 my-auto">
+                <div class="d-flex justify-content-center">
+                    <div class="d-inline-flex flex-column reel">
+                        <div id="first_element" class="cell">7</div>
+                        <div id="fourth_element" class="cell">7</div>
+                        <div id="seventh_element" class="cell">7</div>
+                    </div>
+                    <div class="d-inline-flex flex-column reel">
+                        <div id="second_element" class="cell">777</div>
+                        <div id="fifth_element" class="cell">777</div>
+                        <div id="eighth_element" class="cell">777</div>
+                    </div>
+                    <div class="d-inline-flex flex-column reel">
+                        <div id="third_element" class="cell">7</div>
+                        <div id="sixth_element" class="cell">7</div>
+                        <div id="ninth_element" class="cell">7</div>
+                    </div>
+                </div>
             </div>
-            <div class="bar">
-                <button id="spin">Pull the Lever, Kronk!</button>
+            <div class="col-lg-6 my-auto">
+                <div class="d-flex  justify-content-center">
+                    <div class="d-flex flex-column">
+                        <span>Change Bet:</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn dropdown-toggle group" id="bet_selection" data-toggle="dropdown">5</button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item bet-select">5</span>
+                                <span class="dropdown-item bet-select">10</span>
+                                <span class="dropdown-item bet-select">15</span>
+                                <span class="dropdown-item bet-select">20</span>
+                                <span class="dropdown-item bet-select">25</span>
+                            </div>
+                        </div>
+                        <span>Change Lines:</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn dropdown-toggle group" id="line_selection" data-toggle="dropdown">1</button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item line-select">1</span>
+                                <span class="dropdown-item line-select">3</span>
+                                <span class="dropdown-item line-select">6</span>
+                                <span class="dropdown-item line-select">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button class="btn" id="spin">Pull the Lever, Kronk!</button>
+                </div>
             </div>
         </div>
     </div>

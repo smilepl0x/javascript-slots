@@ -9,19 +9,16 @@ function selectRandom() {
 // Sets the monies
 function setMoney(newMoney) {
     app.money = newMoney;
-    document.getElementById("money").innerHTML = `Your money: ${app.money}`;
 }
 
 // Sets the betties
 function setBet(newBet) {
     app.bet = newBet;
-    document.getElementById("bet").innerHTML = `Betting: ${app.bet}`;
 }
 
 // Sets the line-ies
 function setLines(newLines) {
     app.lines = newLines;
-    document.getElementById("lines").innerHTML = `# of Lines: ${app.lines}`
 }
 
 // Generates the reelies
@@ -84,5 +81,52 @@ function spin() {
 
     for (let i = 0; i < cells.length; i++) {
         cells[i].innerHTML = app.results[i];
+    }
+}
+
+// Checks for 3 matching elements and returns the win amount for that row
+function checkRow(el1, el2, el3) {
+    let payFactor = 1;
+    let lineWin = 0;
+
+    if (el1 === el2 && el1 === el3) {
+        payFactor = app.payFactors[app.elements.indexOf(el1)];
+        lineWin += (app.bet * app.lines * payFactor);
+    }
+
+    return lineWin;
+}
+
+// Need to refactor later. Repetitive. Ugly.
+function checkWin(lines) {
+    let totalWin = 0;
+
+    switch (lines) {
+        case 1:
+            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
+            break;
+        case 3:
+            totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
+            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
+            totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
+            break;
+        case 5:
+            totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
+            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
+            totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
+            totalWin += checkRow(app.results[0], app.results[4], app.results[8]);
+            totalWin += checkRow(app.results[2], app.results[4], app.results[6]);
+            break;
+        default:
+            totalWin = 0;
+            break;
+    }
+
+    if (totalWin > 0) {
+        document.getElementById("win_or_lose").innerHTML = `WINNER! Total Payout: ${totalWin}`;
+        setMoney(app.money + totalWin);
+    }
+    else {
+        document.getElementById("win_or_lose").innerHTML = `LOSE. Please play again.`
     }
 }

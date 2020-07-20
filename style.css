@@ -6,9 +6,7 @@
     --container-color: #C0D6DF;
     --reel-color: #61534A;
     --button-color: #8B532F;
-    --button-hover-color: #0D0805;
     --spin-hover-color: #8B532F;
-    --indicator-color: red;
 }
 
 body {
@@ -18,72 +16,18 @@ body {
     font-size: 15px;
 }
 
-.container {
-    width: 80%;
-    overflow: auto;
-    border-radius: 5px;
-    margin: auto;
-}
-
 #title {
     color: var(--main-color);
-    height: 7vw;
-    display: block;
     margin: 0;
     text-align: left;
-    line-height: 7vw;
-}
-
-#player_info {
-    text-align: center;
-    border-style: solid;
-    border-color: var(--secondary-bg-color);
-    background-image: linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
-}
-
-#money {
-    width: 30%;
-    display: inline-block;
-}
-
-#bet {
-    width: 30%;
-    display: inline-block;
-}
-
-#lines {
-    width: 30%;
-    display: inline-block;
 }
 
 #win_or_lose {
-    padding-top: 10px;
-    text-align: center;
-}
-
-#machine {
-    background-image: linear-gradient(var(--main-bg-color), var(--secondary-bg-color));
-    border-style: solid;
-    border-color: var(--secondary-bg-color);
-}
-
-#machine_left {
-    width: 50%;
-    padding: 20px 0 20px 0;
-    float: left;
-    text-align: center;
-}
-
-#machine_right {
-    width: 50%;
-    padding: 20px 0 20px 0;
-    float: right;
+    padding: 10px 0;
 }
 
 .reel {
     background-color: var(--reel-color);
-    width: 8.5vw;
-    display: inline-block;
     margin: 5px;
     box-shadow: 10px 10px 5px var(--main-color);
 }
@@ -91,67 +35,29 @@ body {
 .cell {
     border-style: solid;
     border-color: black;
-    width: 8vw;
-    padding: 3vw 0;
-    display: inline-block;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 25%;
     text-align: center;
-    font-size: 2vw;
-    font-weight: bolder;
-    overflow: auto;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-.bar {
-    padding: 5px;
-    text-align: center;
-}
-
-.bet_amt {
+.group {
     background-color: var(--button-color);
-    border: 2px solid black;
-    width: 8vw;
-    height: 4vw;
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    line-height: inherit;
-    font-size: inherit;
-    font-family: inherit;
+    min-width: 325px;
     color: inherit;
 }
 
-.bet_amt:hover {
-    background-color: var(--button-hover-color);
-    cursor: pointer;
-}
-
-.line_amt {
-    background-color: var(--button-color);
-    border: 2px solid black;
-    width: 8vw;
-    height: 4vw;
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    line-height: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
-}
-
-.line_amt:hover {
-    background-color: var(--button-hover-color);
-    cursor: pointer;
+.dropdown-menu {
+    background-color: var(--main-color);
 }
 
 #spin {
     background-color: var(--main-color);
     border: 2px solid black;
-    width: 75%;
-    height: 4vw;
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    line-height: inherit;
+    margin: 10px 0;
+    width: 100%;
     font-size: inherit;
     font-family: inherit;
     font-weight: bolder;

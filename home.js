@@ -17,67 +17,24 @@ setMoney(1000);
 setBet(5);
 setLines(1);
 
-function checkRow(el1, el2, el3) {
-    let payFactor = 1;
-    let lineWin = 0;
+// Bet selector
+let betSelections = document.getElementsByClassName("bet-select");
 
-    if (el1 === el2 && el1 === el3) {
-        payFactor = app.payFactors[app.elements.indexOf(el1)];
-        lineWin += (app.bet * app.lines * payFactor);
-    }
-
-    return lineWin;
-}
-
-// Need to refactor later. Repetitive. Ugly.
-function checkWin(lines) {
-    let totalWin = 0;
-
-    switch (lines) {
-        case 1:
-            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
-            break;
-        case 3:
-            totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
-            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
-            totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
-            break;
-        case 5:
-            totalWin += checkRow(app.results[0], app.results[3], app.results[6]);
-            totalWin += checkRow(app.results[1], app.results[4], app.results[7]);
-            totalWin += checkRow(app.results[2], app.results[5], app.results[8]);
-            totalWin += checkRow(app.results[0], app.results[4], app.results[8]);
-            totalWin += checkRow(app.results[2], app.results[4], app.results[6]);
-            break;
-        default:
-            totalWin = 0;
-            break;
-    }
-
-    if (totalWin > 0) {
-        document.getElementById("win_or_lose").innerHTML = `WINNER! Total Payout: ${totalWin}`;
-        setMoney(app.money + totalWin);
-    }
-    else {
-        document.getElementById("win_or_lose").innerHTML = `LOSE. Please play again.`
-    }
-}
-
-// Bet buttons
-let betButtons = document.getElementsByClassName("bet_amt");
-
-for (let i = 0; i < betButtons.length; i++) {
-    betButtons[i].addEventListener("click", function() {
-        setBet(Number.parseFloat(betButtons[i].innerHTML));
+for (let i = 0; i < betSelections.length; i++) {
+    betSelections[i].addEventListener("click", function() {
+        console.log("clicked");
+        document.getElementById("bet_selection").innerHTML = betSelections[i].innerHTML;
+        setBet(Number.parseFloat(betSelections[i].innerHTML));
     })
 }
 
-// Line buttons
-let lineButtons = document.getElementsByClassName("line_amt");
+// Line selector
+let lineSelections = document.getElementsByClassName("line-select");
 
-for (let i = 0; i < lineButtons.length; i++) {
-    lineButtons[i].addEventListener("click", function() {
-        setLines(Number.parseFloat(lineButtons[i].innerHTML));
+for (let i = 0; i < lineSelections.length; i++) {
+    lineSelections[i].addEventListener("click", function() {
+        document.getElementById("line_selection").innerHTML = lineSelections[i].innerHTML;
+        setLines(Number.parseFloat(lineSelections[i].innerHTML));
     })
 }
 
@@ -86,8 +43,7 @@ document.getElementById("spin").addEventListener("click", function() {
 
     // check if money is available and take it
     if ((app.bet * app.lines) <= app.money) {
-        setMoney(app.money - (app.bet * app.lines))
-        document.getElementById("money").innerHTML = "Your money: " + app.money;
+        setMoney(app.money - (app.bet * app.lines));
 
         // Reel elements (spin!)
         spin();
